@@ -12,17 +12,16 @@ def plotar_interpolacao(pontos, coeficientes):
     
     plt.figure(figsize=(10, 6))
     plt.plot(x_plot, y_plot, label='Polinômio de Newton', color='blue')
-    plt.scatter(x_valores, y_valores, color='red', label='Pontos dados', zorder=5)
+    plt.scatter(x_valores, y_valores, color='red', label='Pontos usados', zorder=5)
     plt.title('Interpolação de Newton')
     plt.xlabel('x')
     plt.ylabel('y')
     plt.grid(True, linestyle='--', alpha=0.7)
     plt.legend()
-
-    backend = plt.get_backend()
-    if 'agg' in backend.lower():
-        plt.savefig('/home/matheus/Documentos/Trabalhos/Projeto_interpolação/View/interpolacao_newton.png')
-        print("\nAviso: Ambiente não suporta exibição interativa de gráficos.")
-        print("Gráfico salvo como 'interpolacao_newton.png' na pasta View.")
-    else:
+    
+    try:
         plt.show()
+    except:
+        print("\nAviso: O ambiente não suporta exibição interativa de gráficos.")
+        plt.savefig('interpolacao_newton.png')
+        print("Gráfico salvo como 'interpolacao_newton.png' na pasta atual.")

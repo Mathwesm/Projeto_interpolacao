@@ -2,8 +2,8 @@ import numpy as np
 from Model.Calcular_diferencas import calcular_diferencas_divididas
 from Model.Polinomio_newton import polinomio_newton
 
-def interpolacao_newton(pontos, x_interpolar):
 
+def interpolacao_newton(pontos, x_interpolar):
     if not pontos:
         raise ValueError("Nenhum ponto foi fornecido.")
     

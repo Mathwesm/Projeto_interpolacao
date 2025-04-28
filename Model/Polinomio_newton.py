@@ -1,6 +1,5 @@
 
 def polinomio_newton(x_valores, coeficientes, x):
-
     n = len(coeficientes)
     if n == 0:
         raise ValueError("Nenhum coeficiente foi fornecido.")
